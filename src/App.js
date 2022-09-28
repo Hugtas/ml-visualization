@@ -40,372 +40,376 @@ const initialConditions = {
 };
 
 function App() {
+  const labradorBase = {
+    r1: {
+      c1: 1,
+      c2: 0.8,
+      c3: 1,
+      c4: 0.8,
+      c5: 1,
+    },
+    r2: {
+      c1: 0.7,
+      c2: 0.5,
+      c3: 0.6,
+      c4: 0.5,
+      c5: 0.7,
+    },
+    r3: {
+      c1: 0.7,
+      c2: 0.4,
+      c3: 0.2,
+      c4: 0.4,
+      c5: 0.7,
+    },
+    r4: {
+      c1: 1,
+      c2: 0.4,
+      c3: 0.6,
+      c4: 0.5,
+      c5: 1,
+    },
+    r5: {
+      c1: 1,
+      c2: 0.7,
+      c3: 0.6,
+      c4: 0.8,
+      c5: 1,
+    },
+  };
   const [pictureIsALab, setPictureIsALab] = useState(true);
   const [currentModel, setCurrentModel] = useState(initialConditions);
   const [currentPicture, setCurrentPicture] = useState(initialConditions);
 
-  const [inRevealMode, setInRevealMode] = useState(false);
+  const [inRevealMode, setInRevealMode] = useState(true);
+
   useEffect(() => {
-    const getANewPicture = () => {
-      const labradorBase = {
-        r1: {
-          c1: 1,
-          c2: 0.8,
-          c3: 1,
-          c4: 0.8,
-          c5: 1,
-        },
-        r2: {
-          c1: 0.7,
-          c2: 0.5,
-          c3: 0.6,
-          c4: 0.5,
-          c5: 0.7,
-        },
-        r3: {
-          c1: 0.7,
-          c2: 0.4,
-          c3: 0.2,
-          c4: 0.4,
-          c5: 0.7,
-        },
-        r4: {
-          c1: 1,
-          c2: 0.4,
-          c3: 0.6,
-          c4: 0.5,
-          c5: 1,
-        },
-        r5: {
-          c1: 1,
-          c2: 0.7,
-          c3: 0.6,
-          c4: 0.8,
-          c5: 1,
-        },
+    const updater = async () => {
+      const getANewPicture = () => {
+        setCurrentPicture({
+          r1: {
+            c1: pictureIsALab
+              ? Math.random() *
+                (labradorBase.r1.c1 +
+                  0.1 -
+                  labradorBase.r1.c1 -
+                  0.1 +
+                  labradorBase.r1.c1 -
+                  0.1)
+              : Math.random(),
+            c2: pictureIsALab
+              ? Math.random() *
+                (labradorBase.r1.c2 +
+                  0.1 -
+                  labradorBase.r1.c2 -
+                  0.1 +
+                  labradorBase.r1.c2 -
+                  0.1)
+              : Math.random(),
+            c3: pictureIsALab
+              ? Math.random() *
+                (labradorBase.r1.c3 +
+                  0.1 -
+                  labradorBase.r1.c3 -
+                  0.1 +
+                  labradorBase.r1.c3 -
+                  0.1)
+              : Math.random(),
+            c4: pictureIsALab
+              ? Math.random() *
+                (labradorBase.r1.c4 +
+                  0.1 -
+                  labradorBase.r1.c4 -
+                  0.1 +
+                  labradorBase.r1.c4 -
+                  0.1)
+              : Math.random(),
+            c5: pictureIsALab
+              ? Math.random() *
+                (labradorBase.r1.c5 +
+                  0.1 -
+                  labradorBase.r1.c5 -
+                  0.1 +
+                  labradorBase.r1.c5 -
+                  0.1)
+              : Math.random(),
+          },
+          r2: {
+            c1: pictureIsALab
+              ? Math.random() *
+                (labradorBase.r2.c1 +
+                  0.1 -
+                  labradorBase.r2.c1 -
+                  0.1 +
+                  labradorBase.r2.c1 -
+                  0.1)
+              : Math.random(),
+            c2: pictureIsALab
+              ? Math.random() *
+                (labradorBase.r2.c2 +
+                  0.1 -
+                  labradorBase.r2.c2 -
+                  0.1 +
+                  labradorBase.r2.c2 -
+                  0.1)
+              : Math.random(),
+            c3: pictureIsALab
+              ? Math.random() *
+                (labradorBase.r2.c3 +
+                  0.1 -
+                  labradorBase.r2.c3 -
+                  0.1 +
+                  labradorBase.r2.c3 -
+                  0.1)
+              : Math.random(),
+            c4: pictureIsALab
+              ? Math.random() *
+                (labradorBase.r2.c4 +
+                  0.1 -
+                  labradorBase.r2.c4 -
+                  0.1 +
+                  labradorBase.r2.c4 -
+                  0.1)
+              : Math.random(),
+            c5: pictureIsALab
+              ? Math.random() *
+                (labradorBase.r2.c5 +
+                  0.1 -
+                  labradorBase.r2.c5 -
+                  0.1 +
+                  labradorBase.r2.c5 -
+                  0.1)
+              : Math.random(),
+          },
+          r3: {
+            c1: pictureIsALab
+              ? Math.random() *
+                (labradorBase.r3.c1 +
+                  0.1 -
+                  labradorBase.r3.c1 -
+                  0.1 +
+                  labradorBase.r3.c1 -
+                  0.1)
+              : Math.random(),
+            c2: pictureIsALab
+              ? Math.random() *
+                (labradorBase.r3.c2 +
+                  0.1 -
+                  labradorBase.r3.c2 -
+                  0.1 +
+                  labradorBase.r3.c2 -
+                  0.1)
+              : Math.random(),
+            c3: pictureIsALab
+              ? Math.random() *
+                (labradorBase.r3.c3 +
+                  0.1 -
+                  labradorBase.r3.c3 -
+                  0.1 +
+                  labradorBase.r3.c3 -
+                  0.1)
+              : Math.random(),
+            c4: pictureIsALab
+              ? Math.random() *
+                (labradorBase.r3.c4 +
+                  0.1 -
+                  labradorBase.r3.c4 -
+                  0.1 +
+                  labradorBase.r3.c4 -
+                  0.1)
+              : Math.random(),
+            c5: pictureIsALab
+              ? Math.random() *
+                (labradorBase.r3.c5 +
+                  0.1 -
+                  labradorBase.r3.c5 -
+                  0.1 +
+                  labradorBase.r3.c5 -
+                  0.1)
+              : Math.random(),
+          },
+          r4: {
+            c1: pictureIsALab
+              ? Math.random() *
+                (labradorBase.r4.c1 +
+                  0.1 -
+                  labradorBase.r4.c1 -
+                  0.1 +
+                  labradorBase.r4.c1 -
+                  0.1)
+              : Math.random(),
+            c2: pictureIsALab
+              ? Math.random() *
+                (labradorBase.r4.c2 +
+                  0.1 -
+                  labradorBase.r4.c2 -
+                  0.1 +
+                  labradorBase.r4.c2 -
+                  0.1)
+              : Math.random(),
+            c3: pictureIsALab
+              ? Math.random() *
+                (labradorBase.r4.c3 +
+                  0.1 -
+                  labradorBase.r4.c3 -
+                  0.1 +
+                  labradorBase.r4.c3 -
+                  0.1)
+              : Math.random(),
+            c4: pictureIsALab
+              ? Math.random() *
+                (labradorBase.r4.c4 +
+                  0.1 -
+                  labradorBase.r4.c4 -
+                  0.1 +
+                  labradorBase.r4.c4 -
+                  0.1)
+              : Math.random(),
+            c5: pictureIsALab
+              ? Math.random() *
+                (labradorBase.r4.c5 +
+                  0.1 -
+                  labradorBase.r4.c5 -
+                  0.1 +
+                  labradorBase.r4.c5 -
+                  0.1)
+              : Math.random(),
+          },
+          r5: {
+            c1: pictureIsALab
+              ? Math.random() *
+                (labradorBase.r5.c1 +
+                  0.1 -
+                  labradorBase.r5.c1 -
+                  0.1 +
+                  labradorBase.r5.c1 -
+                  0.1)
+              : Math.random(),
+            c2: pictureIsALab
+              ? Math.random() *
+                (labradorBase.r5.c2 +
+                  0.1 -
+                  labradorBase.r5.c2 -
+                  0.1 +
+                  labradorBase.r5.c2 -
+                  0.1)
+              : Math.random(),
+            c3: pictureIsALab
+              ? Math.random() *
+                (labradorBase.r5.c3 +
+                  0.1 -
+                  labradorBase.r5.c3 -
+                  0.1 +
+                  labradorBase.r5.c3 -
+                  0.1)
+              : Math.random(),
+            c4: pictureIsALab
+              ? Math.random() *
+                (labradorBase.r5.c4 +
+                  0.1 -
+                  labradorBase.r5.c4 -
+                  0.1 +
+                  labradorBase.r5.c4 -
+                  0.1)
+              : Math.random(),
+            c5: pictureIsALab
+              ? Math.random() *
+                (labradorBase.r5.c5 +
+                  0.1 -
+                  labradorBase.r5.c5 -
+                  0.1 +
+                  labradorBase.r5.c5 -
+                  0.1)
+              : Math.random(),
+          },
+        });
       };
-      setCurrentPicture({
-        r1: {
-          c1: pictureIsALab
-            ? Math.random() *
-              (labradorBase.r1.c1 +
-                0.1 -
-                labradorBase.r1.c1 -
-                0.1 +
-                labradorBase.r1.c1 -
-                0.1)
-            : Math.random(),
-          c2: pictureIsALab
-            ? Math.random() *
-              (labradorBase.r1.c2 +
-                0.1 -
-                labradorBase.r1.c2 -
-                0.1 +
-                labradorBase.r1.c2 -
-                0.1)
-            : Math.random(),
-          c3: pictureIsALab
-            ? Math.random() *
-              (labradorBase.r1.c3 +
-                0.1 -
-                labradorBase.r1.c3 -
-                0.1 +
-                labradorBase.r1.c3 -
-                0.1)
-            : Math.random(),
-          c4: pictureIsALab
-            ? Math.random() *
-              (labradorBase.r1.c4 +
-                0.1 -
-                labradorBase.r1.c4 -
-                0.1 +
-                labradorBase.r1.c4 -
-                0.1)
-            : Math.random(),
-          c5: pictureIsALab
-            ? Math.random() *
-              (labradorBase.r1.c5 +
-                0.1 -
-                labradorBase.r1.c5 -
-                0.1 +
-                labradorBase.r1.c5 -
-                0.1)
-            : Math.random(),
-        },
-        r2: {
-          c1: pictureIsALab
-            ? Math.random() *
-              (labradorBase.r2.c1 +
-                0.1 -
-                labradorBase.r2.c1 -
-                0.1 +
-                labradorBase.r2.c1 -
-                0.1)
-            : Math.random(),
-          c2: pictureIsALab
-            ? Math.random() *
-              (labradorBase.r2.c2 +
-                0.1 -
-                labradorBase.r2.c2 -
-                0.1 +
-                labradorBase.r2.c2 -
-                0.1)
-            : Math.random(),
-          c3: pictureIsALab
-            ? Math.random() *
-              (labradorBase.r2.c3 +
-                0.1 -
-                labradorBase.r2.c3 -
-                0.1 +
-                labradorBase.r2.c3 -
-                0.1)
-            : Math.random(),
-          c4: pictureIsALab
-            ? Math.random() *
-              (labradorBase.r2.c4 +
-                0.1 -
-                labradorBase.r2.c4 -
-                0.1 +
-                labradorBase.r2.c4 -
-                0.1)
-            : Math.random(),
-          c5: pictureIsALab
-            ? Math.random() *
-              (labradorBase.r2.c5 +
-                0.1 -
-                labradorBase.r2.c5 -
-                0.1 +
-                labradorBase.r2.c5 -
-                0.1)
-            : Math.random(),
-        },
-        r3: {
-          c1: pictureIsALab
-            ? Math.random() *
-              (labradorBase.r3.c1 +
-                0.1 -
-                labradorBase.r3.c1 -
-                0.1 +
-                labradorBase.r3.c1 -
-                0.1)
-            : Math.random(),
-          c2: pictureIsALab
-            ? Math.random() *
-              (labradorBase.r3.c2 +
-                0.1 -
-                labradorBase.r3.c2 -
-                0.1 +
-                labradorBase.r3.c2 -
-                0.1)
-            : Math.random(),
-          c3: pictureIsALab
-            ? Math.random() *
-              (labradorBase.r3.c3 +
-                0.1 -
-                labradorBase.r3.c3 -
-                0.1 +
-                labradorBase.r3.c3 -
-                0.1)
-            : Math.random(),
-          c4: pictureIsALab
-            ? Math.random() *
-              (labradorBase.r3.c4 +
-                0.1 -
-                labradorBase.r3.c4 -
-                0.1 +
-                labradorBase.r3.c4 -
-                0.1)
-            : Math.random(),
-          c5: pictureIsALab
-            ? Math.random() *
-              (labradorBase.r3.c5 +
-                0.1 -
-                labradorBase.r3.c5 -
-                0.1 +
-                labradorBase.r3.c5 -
-                0.1)
-            : Math.random(),
-        },
-        r4: {
-          c1: pictureIsALab
-            ? Math.random() *
-              (labradorBase.r4.c1 +
-                0.1 -
-                labradorBase.r4.c1 -
-                0.1 +
-                labradorBase.r4.c1 -
-                0.1)
-            : Math.random(),
-          c2: pictureIsALab
-            ? Math.random() *
-              (labradorBase.r4.c2 +
-                0.1 -
-                labradorBase.r4.c2 -
-                0.1 +
-                labradorBase.r4.c2 -
-                0.1)
-            : Math.random(),
-          c3: pictureIsALab
-            ? Math.random() *
-              (labradorBase.r4.c3 +
-                0.1 -
-                labradorBase.r4.c3 -
-                0.1 +
-                labradorBase.r4.c3 -
-                0.1)
-            : Math.random(),
-          c4: pictureIsALab
-            ? Math.random() *
-              (labradorBase.r4.c4 +
-                0.1 -
-                labradorBase.r4.c4 -
-                0.1 +
-                labradorBase.r4.c4 -
-                0.1)
-            : Math.random(),
-          c5: pictureIsALab
-            ? Math.random() *
-              (labradorBase.r4.c5 +
-                0.1 -
-                labradorBase.r4.c5 -
-                0.1 +
-                labradorBase.r4.c5 -
-                0.1)
-            : Math.random(),
-        },
-        r5: {
-          c1: pictureIsALab
-            ? Math.random() *
-              (labradorBase.r5.c1 +
-                0.1 -
-                labradorBase.r5.c1 -
-                0.1 +
-                labradorBase.r5.c1 -
-                0.1)
-            : Math.random(),
-          c2: pictureIsALab
-            ? Math.random() *
-              (labradorBase.r5.c2 +
-                0.1 -
-                labradorBase.r5.c2 -
-                0.1 +
-                labradorBase.r5.c2 -
-                0.1)
-            : Math.random(),
-          c3: pictureIsALab
-            ? Math.random() *
-              (labradorBase.r5.c3 +
-                0.1 -
-                labradorBase.r5.c3 -
-                0.1 +
-                labradorBase.r5.c3 -
-                0.1)
-            : Math.random(),
-          c4: pictureIsALab
-            ? Math.random() *
-              (labradorBase.r5.c4 +
-                0.1 -
-                labradorBase.r5.c4 -
-                0.1 +
-                labradorBase.r5.c4 -
-                0.1)
-            : Math.random(),
-          c5: pictureIsALab
-            ? Math.random() *
-              (labradorBase.r5.c5 +
-                0.1 -
-                labradorBase.r5.c5 -
-                0.1 +
-                labradorBase.r5.c5 -
-                0.1)
-            : Math.random(),
-        },
-      });
-    };
-    const getNextModel = () => {
-      getANewPicture();
-      const weightImpact = pictureIsALab ? 1 : -1;
-      const newModel = {
-        r1: {
-          c1: currentModel.r1.c1 + currentPicture.r1.c1 * weightImpact,
-          c2: currentModel.r1.c2 + currentPicture.r1.c2 * weightImpact,
-          c3: currentModel.r1.c3 + currentPicture.r1.c3 * weightImpact,
-          c4: currentModel.r1.c4 + currentPicture.r1.c4 * weightImpact,
-          c5: currentModel.r1.c5 + currentPicture.r1.c5 * weightImpact,
-        },
-        r2: {
-          c1: currentModel.r2.c1 + currentPicture.r2.c1 * weightImpact,
-          c2: currentModel.r2.c2 + currentPicture.r2.c2 * weightImpact,
-          c3: currentModel.r2.c3 + currentPicture.r2.c3 * weightImpact,
-          c4: currentModel.r2.c4 + currentPicture.r2.c4 * weightImpact,
-          c5: currentModel.r2.c5 + currentPicture.r2.c5 * weightImpact,
-        },
-        r3: {
-          c1: currentModel.r3.c1 + currentPicture.r3.c1 * weightImpact,
-          c2: currentModel.r3.c2 + currentPicture.r3.c2 * weightImpact,
-          c3: currentModel.r3.c3 + currentPicture.r3.c3 * weightImpact,
-          c4: currentModel.r3.c4 + currentPicture.r3.c4 * weightImpact,
-          c5: currentModel.r3.c5 + currentPicture.r3.c5 * weightImpact,
-        },
-        r4: {
-          c1: currentModel.r4.c1 + currentPicture.r4.c1 * weightImpact,
-          c2: currentModel.r4.c2 + currentPicture.r4.c2 * weightImpact,
-          c3: currentModel.r4.c3 + currentPicture.r4.c3 * weightImpact,
-          c4: currentModel.r4.c4 + currentPicture.r4.c4 * weightImpact,
-          c5: currentModel.r4.c5 + currentPicture.r4.c5 * weightImpact,
-        },
-        r5: {
-          c1: currentModel.r5.c1 + currentPicture.r5.c1 * weightImpact,
-          c2: currentModel.r5.c2 + currentPicture.r5.c2 * weightImpact,
-          c3: currentModel.r5.c3 + currentPicture.r5.c3 * weightImpact,
-          c4: currentModel.r5.c4 + currentPicture.r5.c4 * weightImpact,
-          c5: currentModel.r5.c5 + currentPicture.r5.c5 * weightImpact,
-        },
+      const getNextModel = () => {
+        getANewPicture();
+        const weightImpact = pictureIsALab ? 1 : -1;
+        const newModel = {
+          r1: {
+            c1: currentModel.r1.c1 + currentPicture.r1.c1 * weightImpact,
+            c2: currentModel.r1.c2 + currentPicture.r1.c2 * weightImpact,
+            c3: currentModel.r1.c3 + currentPicture.r1.c3 * weightImpact,
+            c4: currentModel.r1.c4 + currentPicture.r1.c4 * weightImpact,
+            c5: currentModel.r1.c5 + currentPicture.r1.c5 * weightImpact,
+          },
+          r2: {
+            c1: currentModel.r2.c1 + currentPicture.r2.c1 * weightImpact,
+            c2: currentModel.r2.c2 + currentPicture.r2.c2 * weightImpact,
+            c3: currentModel.r2.c3 + currentPicture.r2.c3 * weightImpact,
+            c4: currentModel.r2.c4 + currentPicture.r2.c4 * weightImpact,
+            c5: currentModel.r2.c5 + currentPicture.r2.c5 * weightImpact,
+          },
+          r3: {
+            c1: currentModel.r3.c1 + currentPicture.r3.c1 * weightImpact,
+            c2: currentModel.r3.c2 + currentPicture.r3.c2 * weightImpact,
+            c3: currentModel.r3.c3 + currentPicture.r3.c3 * weightImpact,
+            c4: currentModel.r3.c4 + currentPicture.r3.c4 * weightImpact,
+            c5: currentModel.r3.c5 + currentPicture.r3.c5 * weightImpact,
+          },
+          r4: {
+            c1: currentModel.r4.c1 + currentPicture.r4.c1 * weightImpact,
+            c2: currentModel.r4.c2 + currentPicture.r4.c2 * weightImpact,
+            c3: currentModel.r4.c3 + currentPicture.r4.c3 * weightImpact,
+            c4: currentModel.r4.c4 + currentPicture.r4.c4 * weightImpact,
+            c5: currentModel.r4.c5 + currentPicture.r4.c5 * weightImpact,
+          },
+          r5: {
+            c1: currentModel.r5.c1 + currentPicture.r5.c1 * weightImpact,
+            c2: currentModel.r5.c2 + currentPicture.r5.c2 * weightImpact,
+            c3: currentModel.r5.c3 + currentPicture.r5.c3 * weightImpact,
+            c4: currentModel.r5.c4 + currentPicture.r5.c4 * weightImpact,
+            c5: currentModel.r5.c5 + currentPicture.r5.c5 * weightImpact,
+          },
+        };
+        if (
+          currentModel.r1.c1 >= 200 ||
+          currentModel.r1.c2 >= 200 ||
+          currentModel.r1.c3 >= 200 ||
+          currentModel.r1.c4 >= 200 ||
+          currentModel.r1.c5 >= 200 ||
+          currentModel.r2.c1 >= 200 ||
+          currentModel.r2.c2 >= 200 ||
+          currentModel.r2.c3 >= 200 ||
+          currentModel.r2.c4 >= 200 ||
+          currentModel.r2.c5 >= 200 ||
+          currentModel.r3.c1 >= 200 ||
+          currentModel.r3.c2 >= 200 ||
+          currentModel.r3.c3 >= 200 ||
+          currentModel.r3.c4 >= 200 ||
+          currentModel.r3.c5 >= 200 ||
+          currentModel.r4.c1 >= 200 ||
+          currentModel.r4.c2 >= 200 ||
+          currentModel.r4.c3 >= 200 ||
+          currentModel.r4.c4 >= 200 ||
+          currentModel.r4.c5 >= 200 ||
+          currentModel.r5.c1 >= 200 ||
+          currentModel.r5.c2 >= 200 ||
+          currentModel.r5.c3 >= 200 ||
+          currentModel.r5.c4 >= 200 ||
+          currentModel.r5.c5 >= 200
+        ) {
+          setInRevealMode(false);
+        }
+        setCurrentModel(newModel);
+        setPictureIsALab(Math.random() >= 0.3);
       };
-      if (
-        currentModel.r1.c1 >= 200 ||
-        currentModel.r1.c2 >= 200 ||
-        currentModel.r1.c3 >= 200 ||
-        currentModel.r1.c4 >= 200 ||
-        currentModel.r1.c5 >= 200 ||
-        currentModel.r2.c1 >= 200 ||
-        currentModel.r2.c2 >= 200 ||
-        currentModel.r2.c3 >= 200 ||
-        currentModel.r2.c4 >= 200 ||
-        currentModel.r2.c5 >= 200 ||
-        currentModel.r3.c1 >= 200 ||
-        currentModel.r3.c2 >= 200 ||
-        currentModel.r3.c3 >= 200 ||
-        currentModel.r3.c4 >= 200 ||
-        currentModel.r3.c5 >= 200 ||
-        currentModel.r4.c1 >= 200 ||
-        currentModel.r4.c2 >= 200 ||
-        currentModel.r4.c3 >= 200 ||
-        currentModel.r4.c4 >= 200 ||
-        currentModel.r4.c5 >= 200 ||
-        currentModel.r5.c1 >= 200 ||
-        currentModel.r5.c2 >= 200 ||
-        currentModel.r5.c3 >= 200 ||
-        currentModel.r5.c4 >= 200 ||
-        currentModel.r5.c5 >= 200
-      ) {
-        return;
-      }
-      setCurrentModel(newModel);
-      setPictureIsALab(Math.random() >= 0.2);
-    };
-    if (!inRevealMode) {
-      setTimeout(() => {
+      if (inRevealMode) {
+        await new Promise((r) => setTimeout(r, 64));
         getNextModel();
-      }, [32]);
-    }
+      }
+    };
+    updater();
+    return () => {};
   }, [currentModel, inRevealMode, currentPicture, pictureIsALab]);
 
   return (
     <div
       className="App"
       onClick={() => {
-        setInRevealMode(true);
+        setInRevealMode(!inRevealMode);
       }}
     >
       <div>
